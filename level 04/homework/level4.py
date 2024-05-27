@@ -1,7 +1,7 @@
 
 from turtle import *
 speed(20)
-
+#დროშა
 forward(200)
 left(90)
 
@@ -18,6 +18,7 @@ forward(200)
 left(180)
 
 forward(200)
+#სასახლის ყველა ნაწილი
 right(270)
 forward(150)
 
@@ -154,7 +155,7 @@ left(90)
 forward(50)
 left(90)
 forward(50)
-
+#მეფე და დედოფალი
 penup()
 goto(-500,-100)
 pendown()
@@ -240,7 +241,8 @@ left(90)
 forward(35)
 right(35)
 forward(30)
-
+#goa-ს წარწერა დროშაზე
+#წარწერა G
 penup()
 goto(60,150)
 pendown()
@@ -254,7 +256,7 @@ left(90)
 forward(25)
 left(90)
 forward(10)
-
+# წარწერა O
 penup()
 goto(80,150)
 pendown()
@@ -266,7 +268,7 @@ right(90)
 forward(30)
 right(90)
 forward(40)
-
+#წარწერა A
 penup()
 goto(150,152)
 pendown()
