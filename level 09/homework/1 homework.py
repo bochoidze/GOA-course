@@ -1,8 +1,8 @@
 #დაწერეთ პითონის პროგრამა, რომელიც მოუწოდებს მომხმარებელს შეიყვანოს ორი რიცხვი და შემდეგ დაბეჭდოს მათი ჯამი.
-num4 = int(input("enter number ა;"))
+num4 = int(input("enter number ა; "))
 
 
-num10 = int(input("enter number ბ;"))
+num10 = int(input("enter number ბ; "))
 
 result = num4 + num10
 
