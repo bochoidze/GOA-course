@@ -1,17 +1,16 @@
-print(10+40_9>10-6+8)
-a = 7
-b = 8
-print(a<b)
-print(123*123>40*40)
-print(35>7)
+print(40 and 39)
+
+
 aa = "True"
 bb = "False"
-print(90>89-20)
-a_b = "False"
-b_a = "True"
-print(a_b and b_a)
-print(9<10)
-print(456+7<892)
-print(125.5>125)
-print(7845>13*56)
+print(aa or bb)
+
+print(90 or 8)
+print(46+34 and 45)
+print(89*2 or 46)
+print(89 or 89//23*3)
+print(34-4 and 4+34)
+print(67.8*2//9 and 45)
+print(90 or 20)
+print(54 or 9*5)
 
