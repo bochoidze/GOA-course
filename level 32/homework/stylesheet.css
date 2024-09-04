@@ -1,0 +1,24 @@
+body{
+    font-family:Arial, sans-serif  ;
+    margin:0cap ;
+    padding: 0cap;
+    background:linear-gradient(skyblue, lightgreen,indianred) ;
+    color:red ;
+    
+    
+    }
+    h1{
+    color:gold;
+    font-family: "consolas", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: dotted underline;
+
+
+    }
+    header{
+    background-color:cadetblue;
+    color:red ;
+    padding: 10px;
+    text-align: center;
+}
