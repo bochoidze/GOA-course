@@ -1,0 +1,49 @@
+
+body{
+    background-color: darkslategray;
+}
+
+
+
+
+
+h1{
+   color: black;
+   font-size: 4em;
+   font-family: 'cursive';
+
+
+
+}
+
+p{
+    color: cornflowerblue;
+    font-size: 2em;
+    font-family: 'cursive';
+}
+
+
+
+a{
+ font-size: 2em;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+img{height: 200px;
+    width: 200px;
+    padding: 35px;
+    margin: 65px;
+    border: 15px blue;
+    background-color:cyan;
+    
+}

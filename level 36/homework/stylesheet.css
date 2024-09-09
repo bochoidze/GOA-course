@@ -1,0 +1,43 @@
+body{
+
+    background-color:darkslategray;
+}
+
+
+h1{
+    color: red;
+    font-family: cursive;
+    
+
+
+
+
+    text-shadow: 20px 20px  1px  blue, 40px 40px  1px  blue,  60px 60px  1px blue ,  -20px -20px 1px blue;
+     
+    
+}
+
+.hh{
+
+    color: red;
+
+    text-shadow: 20px 20px  1px  blue, 40px 40px  1px  blue,  60px 60px  1px blue ,  -20px -20px 1px blue;
+    font-family: cursive;
+
+}
+img{height: 300px;
+    width: 300px;
+    padding: 35px;
+    margin: 65px;
+    border: 15px blue;
+    background-color:cyan;
+    
+}
+
+p{
+    color: black;
+    font-size: 2.5em;
+    font-family: cursive;
+}
+
+
