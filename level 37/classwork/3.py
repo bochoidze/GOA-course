@@ -5,7 +5,7 @@ fruits = ["apple", "banana", "cherry", "date", "elderberry"]
 print(fruits)
 
 
-fruits += 'fig'
+fruits += ['fig']
 
 fruits.remove('banana')
 

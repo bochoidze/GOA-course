@@ -8,9 +8,9 @@ sia.remove(30)
 
 
 
-sia.sort(max)
+sia.sort(90)
 
-sia.reverse(min)
+sia.reverse(30)
 
 sia.indexs(50)
 
