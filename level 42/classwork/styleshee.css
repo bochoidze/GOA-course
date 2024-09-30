@@ -1,0 +1,26 @@
+a{
+    color:darkmagenta;
+    font-family: cursive;
+    text-decoration: none;
+    font-size: 50px;
+}
+a.hover{
+    color: red;
+    font-family: cursive;
+    text-decoration: none;
+
+
+
+}
+#er{
+    color:darkmagenta;
+    font-family: cursive;
+    text-decoration: none;
+    font-size: 50px;
+}
+#er.hover{
+    color: red;
+    font-family: cursive;
+    text-decoration: none;
+
+}
