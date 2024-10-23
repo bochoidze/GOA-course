@@ -1,0 +1,25 @@
+body{
+    background-image: url(https://storage.georgia.travel/images/mtebi-da-mtsvervalebi-ushba.webp);
+}
+
+form{
+   background-color: white;
+    width: 700px; ;
+    height: 700px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+input[type = "submit"]{
+    color: deeppink;
+    background-color:darkmagenta;
+    border-radius: 1px;
+    width: 200px;
+    height: 30px;
+}
+input[type = "text"]{
+    width: 500px;
+    height: 30px;
+}
