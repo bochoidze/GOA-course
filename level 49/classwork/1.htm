@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ვებგვერდის სათაური</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>ვებგვერდის სათაური</h1>
+    <nav>
+        <ul>
+            <li><a href="#section1">სექცია 1</a></li>
+            <li><a href="#section2">სექცია 2</a></li>
+            <li><a href="#section3">სექცია 3</a></li>
+            <li><a href="#section4">სექცია 4</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="section1" class="static">
+    <h2>სექცია 1</h2>
+    <p>ეს არის სექცია, რომელიც გამოიყენებს სტატიკურ პოზიციონირებას.</p>
+</section>
+
+<section id="section2" class="relative">
+    <h2>სექცია 2</h2>
+    <div class="static-block">
+        <p>ეს არის სტატიკური ბლოკი.</p>
+    </div>
+    <div class="moved-block">
+        <p>ამ ბლოკს აქვს გადანაცვლება მარცხნივ და ზემოთ.</p>
+    </div>
+</section>
+
+<section id="section3" class="absolute">
+    <h2>სექცია 3</h2>
+    <div class="absolute-block">
+        <p>ამ ბლოკს აქვს აბსოლუტური პოზიციონირება.</p>
+    </div>
+</section>
+
+<section id="section4" class="sticky">
+    <h2>სექცია 4</h2>
+    <div class="sticky-element">
+        <p>ეს ელემენტი არის სტიკი.</p>
+    </div>
+    <p>სექციის სხვა კონტენტი...</p>
+</section>
+
+<footer>
+    <p>ეს არის ქვედა ფონი.</p>
+</footer>
+
+</body>
+</html>
