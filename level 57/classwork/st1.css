@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.5s ;
+}
+
+#square1 {
+    background-color: red;
+}
+
+#square2 {
+    background-color: blue;
+}
+
+#square3 {
+    background-color: green;
+}
+
+#square4 {
+    background-color: yellow;
+}
+
+#square1:hover {
+    transform: rotate(45deg);
+}
+
+#square2:hover {
+    transform: scale(1.5);
+}
+
+#square3:hover {
+    transform: translateX(100px);
+}
+
+#square4:hover {
+    transform: skew(20deg, 20deg);
+}

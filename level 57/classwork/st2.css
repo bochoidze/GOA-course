@@ -1,0 +1,22 @@
+
+.link {
+    font-size: 20px;
+    color: blue;
+    text-decoration: none;
+    transition: transform 0.3s ease; 
+}
+
+.link:hover {
+    transform: scale(1.2) rotate(30deg);
+}
+
+
+.image {
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease; 
+}
+
+.image:hover {
+    transform: scale(1.2);
+}
