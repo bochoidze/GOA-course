@@ -1,0 +1,23 @@
+ *{
+    margin: 10px;
+ }
+ 
+
+
+p{
+width: 100px;
+height: 100px;
+background-color: var(--p-bacground-color);
+color: var(--p-color);
+}
+    
+div{
+ width: 100px;
+height: 100px;
+background-color: var(--div-bacground-color);
+}
+:root{
+    --div-bacground-color: blue;
+    --p-bacground-color:blue;
+    --p-color:white;
+}
