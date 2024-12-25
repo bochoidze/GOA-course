@@ -1,0 +1,34 @@
+
+div{
+    display: flex;
+    gap: 100px;
+}
+.rr{
+width: 300px;
+height: 200px;
+gap: 50px;
+-webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+
+}
+.gg{
+    width: 300px;
+    height: 200px;
+    gap: 50px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.bb{
+    width: 300px;
+    height: 200px;
+    gap: 50px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+   
+}
+body{
+    background-color: aqua;
+}
