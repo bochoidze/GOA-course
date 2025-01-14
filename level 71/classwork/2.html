@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateSecondsInMonth(days) {
+    const hoursInDay = 24;
+    const minutesInHour = 60;
+    const secondsInMinute = 60;
+    
+    // Calculate total seconds
+    const secondsInMonth = days * hoursInDay * minutesInHour * secondsInMinute;
+    return secondsInMonth;
+}
+
+const daysInMonth = 30;
+const seconds = calculateSecondsInMonth(daysInMonth);
+console.log("Seconds in a month (30 days):", seconds);
+    </script>
+</body>
+</html>
