@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const student = {
+    name: "John Doe",
+    age: 21,
+    faculty: "Computer Science",
+    course: 3,
+    gpa: 3.8
+};
+
+console.log(student.name);
+console.log(student.age);
+console.log(student.faculty);
+console.log(student.course);
+console.log(student.gpa);
+
+
+console.log(student["name"]);
+console.log(student["age"]);
+console.log(student["faculty"]);
+console.log(student["course"]);
+console.log(student["gpa"]);
+
+
+console.log(`The student ${student.name} is ${student.age} years old, studying in the ${student.faculty} faculty, currently in course ${student.course}, with an average GPA of ${student.gpa}.`);
+    </script>
+</body>
+</html>

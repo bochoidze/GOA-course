@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>სურათის ჩვენება ღილაკით</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+    }
+    img {
+      margin-top: 20px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>აირჩიე სურათი:</h3>
+
+  <button onclick="showImage('image1.jpg')">1</button>
+  <button onclick="showImage('image2.jpg')">2</button>
+  <button onclick="showImage('image3.jpg')">3</button>
+
+  <br>
+  <img id="img" src="" alt="სურათი გამოჩნდება აქ">
+
+  <script>
+    function showImage(path) {
+      document.getElementById('img').src = path;
+    }
+  </script>
+
+</body>
+</html>

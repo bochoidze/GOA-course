@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Manipulation Example</title>
+</head>
+<body>
+
+  <div id="container"></div>
+
+  <script>
+  
+    const paragraph = document.createElement('p');
+    paragraph.textContent = "This is a paragraph.";
+    document.body.appendChild(paragraph);
+
+  
+    const heading2 = document.createElement('h2');
+    heading2.textContent = "Subheading.";
+    document.body.appendChild(heading2);
+    heading2.textContent = "Updated Subheading.";
+
+    const div = document.createElement('div');
+    div.textContent = "This is a div.";
+    document.body.appendChild(div);
+    document.body.removeChild(div);
+
+    const ul = document.createElement('ul');
+    const items = ["Item 1", "Item 2", "Item 3"];
+    items.forEach(text => {
+      const li = document.createElement('li');
+      li.textContent = text;
+      ul.appendChild(li);
+    });
+    document.body.appendChild(ul);
+
+   
+    console.log("First child of <ul>:", ul.firstElementChild.textContent);
+    console.log("Last child of <ul>:", ul.lastElementChild.textContent);
+
+    const h3 = document.createElement('h3');
+    h3.textContent = "Inserted Heading.";
+    document.body.insertBefore(h3, document.body.firstChild);
+
+    const span = document.createElement('span');
+    span.textContent = "This is a span.";
+    const container = document.getElementById('container');
+    container.appendChild(span);
+    console.log("Parent of <span>:", span.parentElement);
+  </script>
+</body>
+</html>

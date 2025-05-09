@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM ელემენტებზე წვდომა</title>
+  <style>
+    .highlight {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">სათაური</h1>
+  <p class="info">პირველი აბზაცი</p>
+  <p class="info">მეორე აბზაცი</p>
+  <div>ეს არის <span>ტესტი</span></div>
+
+  <button onclick="changeContent()">შეცვალე</button>
+
+  <script>
+  
+    const title = document.getElementById("title");
+    title.style.color = "blue"; 
+
+    const infos = document.getElementsByClassName("info");
+    for (let i = 0; i < infos.length; i++) {
+      infos[i].style.backgroundColor = "lightyellow";
+    }
+
+    
+    const paragraphs = document.getElementsByTagName("p");
+    for (let p of paragraphs) {
+      p.style.fontSize = "18px";
+    }
+
+    function changeContent() {
+      
+      title.innerHTML = "<i>შეცვლილი</i> <b>სათაური</b>";
+
+      
+      paragraphs[0].innerText = "<b>ეს არის ტექსტი</b>"; 
+
+      paragraphs[1].textContent = "მარტივი ტექსტი (textContent)";
+    }
+  </script>
+
+</body>
+</html>

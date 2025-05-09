@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const academy = {
+  name: "GOA Academy",
+  courses: ["JavaScript", "Python", "html", "css"],
+  socialLink: "https://www.youtube.com/@Goal_Oriented_Academy__GOA",
+  reviews: {
+    user1: { name: "გელა", status: "მოსწავლე", review: "კარგი შეფასება" },
+    user2: { name: "ბელა", status: "თინეიჯერი", review: "საშუალო შეფასება." },
+    user3: { name: "ნუგზარი", status: "ბაბუა", review: "ნორმალური შფასება" }
+  }
+};
+
+
+console.log(Object.entries(academy));
+
+
+console.log(Object.keys(academy));
+
+
+console.log(Object.values(academy));
+
+
+console.log(academy.GOA("courses")); 
+
+
+
+const GOA1 = { ...academy, member: "Premium" };
+console.log(GOA1);
+
+Object.freeze(academy);
+
+console.log(Object.isFrozen(freeze));
+    </script>
+</body>
+</html>

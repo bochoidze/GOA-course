@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class User {
+  constructor(name, lastName, phoneNumber, email, password, confirmPassword) {
+    this.name = name;
+    this.lastName = lastName;
+    this.phoneNumber = phoneNumber;
+    this.email = email;
+    this.password = password;
+    this.confirmPassword = confirmPassword;
+  }
+
+  introduce() {
+    return `ჩემს სახელია ${this.name}, ჩემი გვარია ${this.lastName}, ჩემი ტელეფონის ნომერია ${this.phoneNumber}, ჩემი ელფოსტაა ${this.email}.`;
+  }
+}
+
+
+const user1 = new User("გიორგი", "მელაძე", "+995599123456", "giorgi@example.com", "pass1234", "pass1234");
+const user2 = new User("ანა", "ქავთარაძე", "+995577654321", "ana@example.com", "securePass", "securePass");
+const user3 = new User("ნიკა", "გელაშვილი", "+995555987654", "nika@example.com", "nikaPass", "nikaPass");
+
+
+console.log(user1.introduce());
+console.log(user2.introduce());
+console.log(user3.introduce());
+    </script>
+</body>
+</html>

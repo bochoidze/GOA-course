@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fruit List Manipulation</title>
+</head>
+<body>
+  <div id="fruit-list">
+    <ul>
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Cherry</li>
+    </ul>
+  </div>
+
+  <script>
+
+    const ul = document.querySelector('#fruit-list ul');
+
+
+    const newItem = document.createElement('li');
+    newItem.textContent = 'Orange';
+
+
+    ul.insertBefore(newItem, ul.firstElementChild);
+
+    ul.removeChild(ul.lastElementChild);
+
+   
+    console.log('First item:', ul.firstElementChild.textContent);
+
+    
+    console.log('Parent of second item:', ul.children[1].parentElement.textContent);
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>სიყვარულის კალკულატორი</title>
+</head>
+<body>
+  <h1>სიყვარულის კალკულატორი</h1>
+  <button onclick="loveCalculator()">გამოთვალე სიყვარული</button>
+
+  <script>
+    function loveCalculator() {
+      const name1 = prompt("შეიყვანეთ პირველი სახელი:");
+      const name2 = prompt("შეიყვანეთ მეორე სახელი:");
+
+      if (!name1 || !name2) {
+        alert("გთხოვთ ორივე სახელი შეიყვანოთ!");
+        return;
+      }
+
+      const lovePercent = Math.floor(Math.random() * 101);
+      alert(`${name1} და ${name2}, თქვენი სიყვარულის პროცენტია ${lovePercent}%`);
+    }
+  </script>
+</body>
+</html>

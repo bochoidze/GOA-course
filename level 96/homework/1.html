@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript - თარიღი, დრო და ტაიმერები</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    div.section { margin-bottom: 30px; }
+    h2 { color: #333; }
+    input, button { margin: 5px 0; padding: 5px; }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Project - თარიღი, დრო და ტაიმერები</h1>
+
+  <!-- 1. Current Date & Time -->
+  <div class="section">
+    <h2>1. მიმდინარე თარიღი და დრო</h2>
+    <div id="currentDateTime"></div>
+  </div>
+
+  <!-- 2. Age Calculator -->
+  <div class="section">
+    <h2>2. ასაკის გამოთვლა</h2>
+    <input type="date" id="birthdate">
+    <button onclick="calculateAge()">გამოთვალე ასაკი</button>
+    <div id="ageResult"></div>
+  </div>
+
+  <!-- 3. Day of Week -->
+  <div class="section">
+    <h2>3. კვირის დღე</h2>
+    <input type="date" id="someDate">
+    <button onclick="showDay()">მაჩვენე კვირის დღე</button>
+    <div id="dayOfWeek"></div>
+  </div>
+
+  <!-- 4. Timer -->
+  <div class="section">
+    <h2>4. ტაიმერი</h2>
+    <div>წამები: <span id="timer">0</span></div>
+  </div>
+
+  <!-- 5. Live Clock -->
+  <div class="section">
+    <h2>5. ცოცხალი საათი</h2>
+    <div id="liveTime"></div>
+  </div>
+
+  <!-- 6. Random Number Logger -->
+  <div class="section">
+    <h2>6. შემთხვევითი რიცხვი ყოველ წამში (Console-ში)</h2>
+    <p>გახსენი კონსოლი რომ ნახო შედეგები</p>
+  </div>
+
+  <!-- 7. Delayed Message -->
+  <div class="section">
+    <h2>7. დაყოვნებული შეტყობინება</h2>
+    <input type="text" id="msg" placeholder="შეიყვანე შეტყობინება">
+    <input type="number" id="delay" placeholder="დაყოვნება (მილიწამებში)">
+    <button onclick="showDelayedMsg()">გაგზავნა</button>
+    <div id="message"></div>
+  </div>
+
+  <!-- 8. Greeting after Delay -->
+  <div class="section">
+    <h2>8. მიესალმება დაყოვნებით (Console-ში)</h2>
+  </div>
+
+  <!-- 9. Delayed Chain -->
+  <div class="section">
+    <h2>9. თანმიმდევრული შეტყობინებები (Console-ში)</h2>
+  </div>
+
+  <!-- 10. Personalized Dynamic Greeting -->
+  <div class="section">
+    <h2>10. პერსონალიზებული მისალმება</h2>
+    <div id="greeting" style="font-size: 20px; font-weight: bold;"></div>
+  </div>
+
+<script>
+
+  function showCurrentDateTime() {
+    const now = new Date();
+    const formatted = now.getFullYear() + "-" +
+      String(now.getMonth() + 1).padStart(2, '0') + "-" +
+      String(now.getDate()).padStart(2, '0') + " " +
+      String(now.getHours()).padStart(2, '0') + ":" +
+      String(now.getMinutes()).padStart(2, '0') + ":" +
+      String(now.getSeconds()).padStart(2, '0');
+    document.getElementById("currentDateTime").textContent = formatted;
+  }
+  setInterval(showCurrentDateTime, 1000);
+
+
+  function calculateAge() {
+    const birth = new Date(document.getElementById("birthdate").value);
+    const today = new Date();
+    let years = today.getFullYear() - birth.getFullYear();
+    let months = today.getMonth() - birth.getMonth();
+    let days = today.getDate() - birth.getDate();
+    if (days < 0) {
+      months--;
+      days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    }
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+    document.getElementById("ageResult").textContent =
+      `ასაკი: ${years} წელი, ${months} თვე, ${days} დღე`;
+  }
+
+
+  function showDay() {
+    const date = new Date(document.getElementById("someDate").value);
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    document.getElementById("dayOfWeek").textContent = "Day: " + days[date.getDay()];
+  }
+
+
+  let counter = 0;
+  setInterval(() => {
+    document.getElementById("timer").textContent = ++counter;
+  }, 1000);
+
+
+  function updateTime() {
+    const now = new Date();
+    const time = now.toLocaleTimeString();
+    document.getElementById("liveTime").textContent = time;
+  }
+  setInterval(updateTime, 1000);
+
+
+  setInterval(() => {
+    console.log("🎲 შემთხვევითი რიცხვი:", Math.random());
+  }, 1000);
+
+  function showDelayedMsg() {
+    const msg = document.getElementById("msg").value;
+    const delay = parseInt(document.getElementById("delay").value);
+    setTimeout(() => {
+      document.getElementById("message").textContent = msg;
+    }, delay);
+  }
+
+  
+  setTimeout(() => {
+    console.log("👋 მისალმება დაყოვნებით");
+  }, 2000);
+
+ 
+  function first() {
+    console.log(" პირველი ფუნქცია");
+  }
+  function second() {
+    console.log(" მეორე ფუნქცია");
+  }
+  function third() {
+    console.log(" მესამე ფუნქცია");
+  }
+  setTimeout(first, 1000);
+  setTimeout(second, 2000);
+  setTimeout(third, 3000);
+
+ 
+  function updateGreeting() {
+    const hour = new Date().getHours();
+    let message = "";
+    if (hour < 12) {
+      message = "Good Morning 🌅";
+    } else if (hour < 18) {
+      message = "Good Afternoon ☀️";
+    } else {
+      message = "Good Evening 🌙";
+    }
+    document.getElementById("greeting").textContent = message;
+  }
+  setInterval(updateGreeting, 1000);
+</script>
+
+</body>
+</html>

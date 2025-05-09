@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ClassList Example</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+    }
+    .active {
+      border: 2px solid green;
+    }
+    .red {
+      background-color: red;
+    }
+    .blue {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div id="myDiv">This is myDiv</div>
+
+
+  <button id="toggleButton">Toggle Active</button>
+  <div id="targetDiv">This is targetDiv</div>
+
+
+  <p id="checkParagraph" class="important">This is an important paragraph.</p>
+
+
+  <div id="replaceDiv" class="red">This div will change color</div>
+
+  <div id="itemDiv" class="class1 class2 class3">This div has multiple classes</div>
+
+  <script>
+
+    document.getElementById('myDiv').classList.add('highlight');
+
+
+    document.getElementById('myDiv').classList.remove('highlight');
+
+
+    document.getElementById('toggleButton').addEventListener('click', function() {
+      document.getElementById('targetDiv').classList.toggle('active');
+    });
+
+
+    const hasImportant = document.getElementById('checkParagraph').classList.contains('important');
+    console.log('Paragraph has "important" class:', hasImportant);
+
+    document.getElementById('replaceDiv').classList.replace('red', 'blue');
+
+
+    const secondClass = document.getElementById('itemDiv').classList.item(1);
+    console.log('Second class of itemDiv:', secondClass);
+  </script>
+
+</body>
+</html>

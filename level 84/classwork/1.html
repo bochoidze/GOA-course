@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getUserData(name, lastname, age, birthYear) {
+    return { name, lastname, age, birthYear };
+}
+
+
+const inputName = prompt("Enter your name:");
+const inputLastname = prompt("Enter your lastname:");
+const inputAge = parseInt(prompt("Enter your age:"), 10);
+const inputBirthYear = parseInt(prompt("Enter your birth year:"), 10);
+
+
+const userData = getUserData(inputName, inputLastname, inputAge, inputBirthYear);
+
+
+    </script>
+</body>
+</html>

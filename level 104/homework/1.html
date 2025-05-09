@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Image Slider</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .slider {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .slides {
+      display: flex;
+      transition: opacity 1s ease-in-out;
+      position: relative;
+    }
+    .slide {
+      min-width: 100%;
+      opacity: 0;
+      transition: opacity 1s ease;
+      position: absolute;
+      top: 0; left: 0;
+    }
+    .slide.active {
+      opacity: 1;
+      position: relative;
+    }
+    .slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+    }
+    .nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
+    .nav button {
+      background: rgba(255, 255, 255, 0.3);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 5px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .nav button:hover {
+      background: rgba(255, 255, 255, 0.6);
+    }
+    .dots {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      background: #888;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .dot.active {
+      background: #fff;
+    }
+    @media (max-width: 600px) {
+      .nav button {
+        font-size: 1.5rem;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="slider" id="slider">
+    <div class="slides">
+      <div class="slide active"><img src="https://via.placeholder.com/800x400/1e90ff/ffffff?text=Game+1" alt="Game 1"></div>
+      <div class="slide"><img src="https://via.placeholder.com/800x400/ff4757/ffffff?text=Game+2" alt="Game 2"></div>
+      <div class="slide"><img src="https://via.placeholder.com/800x400/2ed573/ffffff?text=Game+3" alt="Game 3"></div>
+    </div>
+    <div class="nav">
+      <button id="prev">&#10094;</button>
+      <button id="next">&#10095;</button>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.getElementById('dots');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    const slider = document.getElementById('slider');
+    let current = 0;
+    let interval;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        dotsContainer.children[i].classList.toggle('active', i === index);
+      });
+      current = index;
+    }
+
+    function nextSlide() {
+      showSlide((current + 1) % slides.length);
+    }
+
+    function prevSlide() {
+      showSlide((current - 1 + slides.length) % slides.length);
+    }
+
+    function startSlider() {
+      interval = setInterval(nextSlide, 4000);
+    }
+
+    function pauseSlider() {
+      clearInterval(interval);
+    }
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        showSlide(i);
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    slider.addEventListener('mouseenter', pauseSlider);
+    slider.addEventListener('mouseleave', startSlider);
+
+    startSlider();
+  </script>
+</body>
+</html>

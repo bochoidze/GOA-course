@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <title>gg</title>
+    <style>
+        #box {
+            background-color: #4CAF50;
+            width: 150px;
+            height: 150px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .big {
+            width: 250px;
+            height: 250px;
+        }
+        .small {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>დააჭირე გასადიდებლად</h2>
+    <button onclick="makeBig()">ზომის გაზრდა</button>
+
+    <h2>დააჭირე შესამცირებლად</h2>
+    <button onclick="makeSmall()">ზომის შემცირება</button>
+
+    <div id="box"></div>
+
+    <script>
+        function makeBig() {
+            document.getElementById('box').className = 'big';
+        }
+
+        function makeSmall() {
+            document.getElementById('box').className = 'small';
+        }
+    </script>
+
+</body>
+</html>

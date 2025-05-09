@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript დავალებები</title>
+  <style>
+    #colorBox, #textToggle {
+      width: 200px;
+      height: 100px;
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #000;
+    }
+    #textToggle {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ფონის ფერის შეცვლა -->
+  <h2>ფონის ფერის შეცვლა</h2>
+  <button onclick="changeColor()">შეცვალე ფერი</button>
+  <div id="colorBox">მე ვარ div</div>
+
+  <!-- სურათის შეცვლა -->
+  <h2>სურათის შეცვლა</h2>
+  <button onclick="changeImage()">შეცვალე სურათი</button><br>
+  <img id="myImage" src="https://via.placeholder.com/150/0000FF/FFFFFF?text=Image+1" width="150">
+
+  <!-- ტექსტის დამალვა/გამოჩენა -->
+  <h2>ტექსტის დამალვა/გამოჩენა</h2>
+  <button onclick="toggleText()">ტექსტის დამალვა/გამოჩენა</button>
+  <div id="textToggle">ეს არის დასამალ/გამოსაჩენი ტექსტი</div>
+
+  <!-- მრიცხველის გაზრდა -->
+  <h2>მრიცხველის გაზრდა</h2>
+  <button onclick="increaseCounter()">გაზარდე</button>
+  <span id="counter">0</span>
+
+  <!-- ქვიზი -->
+  <h2>ქვიზი</h2>
+  <p>რომელია დედაქალაქი საქართველოსი?</p>
+  <label><input type="radio" name="quiz" value="თბილისი"> თბილისი</label><br>
+  <label><input type="radio" name="quiz" value="ბათუმი"> ბათუმი</label><br>
+  <label><input type="radio" name="quiz" value="ქუთაისი"> ქუთაისი</label><br>
+  <button onclick="checkAnswer()">შემოწმება</button>
+  <p id="quizResult"></p>
+
+  <script>
+    // ფერის შემთხვევითი შეცვლა
+    function changeColor() {
+      const colors = ["red", "green", "blue", "orange", "purple", "yellow"];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.getElementById("colorBox").style.backgroundColor = randomColor;
+    }
+
+    // სურათის შეცვლა
+    let imageToggle = true;
+    function changeImage() {
+      const img = document.getElementById("myImage");
+      if (imageToggle) {
+        img.src = "https://via.placeholder.com/150/FF0000/FFFFFF?text=Image+2";
+      } else {
+        img.src = "https://via.placeholder.com/150/0000FF/FFFFFF?text=Image+1";
+      }
+      imageToggle = !imageToggle;
+    }
+
+    // ტექსტის toggle
+    function toggleText() {
+      const textDiv = document.getElementById("textToggle");
+      if (textDiv.style.display === "none") {
+        textDiv.style.display = "block";
+      } else {
+        textDiv.style.display = "none";
+      }
+    }
+
+    // მრიცხველის გაზრდა
+    let count = 0;
+    function increaseCounter() {
+      count++;
+      document.getElementById("counter").innerText = count;
+    }
+
+  // ქვიზის შემოწმება
+    function checkAnswer() {
+      const options = document.getElementsByName("quiz");
+      let selected;
+      for (let option of options) {
+        if (option.checked) {
+          selected = option.value;
+          break;
+        }
+      }
+
+      const result = document.getElementById("quizResult");
+      if (!selected) {
+        result.textContent = "გთხოვთ, აირჩიოთ პასუხი.";
+      } else if (selected === "თბილისი") {
+        result.textContent = "სწორია!";
+      } else {
+        result.textContent = "არასწორია.";
+      }
+    }
+  </script>
+
+</body>
+</html>
