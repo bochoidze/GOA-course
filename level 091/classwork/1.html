@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>მასივის ოპერაციები</title>
+</head>
+<body>
+
+  <h2>მასივის შემოწმება, დამატება და წაშლა</h2>
+
+  <button onclick="arrayOperations()">გაშვი კოდი</button>
+
+  <pre id="result"></pre>
+
+  <script>
+    function arrayOperations() {
+      let arr = ["ვაშლი", "ბანანი", "კივი", "ატამი", "მსხალი"];
+      let log = `საწყისი მასივი: [${arr.join(', ')}]\n`;
+
+     
+      arr.push("საზამთრო", "ფორთოხალი", "ანანასი");
+      log += `დამატების შემდეგ: [${arr.join(', ')}]\n`;
+
+      arr.splice(0, 4);
+      log += `წაშლის შემდეგ (პირველი 4 ელემენტი): [${arr.join(', ')}]\n`;
+
+      const valuesToCheck = ["ფორთოხალი", "ვაშლი", "ანანასი"];
+
+      valuesToCheck.forEach(value => {
+        const isIncluded = arr.includes(value);
+        const index = arr.indexOf(value);
+        log += `შეიცავს "${value}"? ${isIncluded} ${isIncluded ? `(ინდექსი: ${index})` : ''}\n`;
+      });
+
+      document.getElementById("result").innerText = log;
+    }
+  </script>
+
+</body>
+</html>

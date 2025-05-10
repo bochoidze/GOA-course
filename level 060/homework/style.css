@@ -1,0 +1,40 @@
+ body {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .div1, .div2, .div3 {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            transition: transform 0.5s, background-color 0.5s; 
+        }
+
+        .div1 {
+            background-color: lightblue;
+        }
+        .div1:hover {
+            transform: rotate(280deg);
+            background-color: lightcoral;
+        }
+
+       
+        .div2 {
+            background-color: lightgreen;
+        }
+        .div2:hover {
+            transform: scale(3);
+        }
+
+        
+        .div3 {
+            background-color: lightyellow;
+        }
+        .div3:hover {
+            transform: translateX(100px) 
+       
+        }

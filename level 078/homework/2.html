@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>ამინდის პროგნოზი</title>
+</head>
+<body>
+
+  <h2>შეიყვანე ამინდის კოდი (1-4):</h2>
+  <input type="number" id="weatherInput" min="1" max="4">
+  <button onclick="checkWeather()">შეამოწმე</button>
+
+  <p id="weatherResult"></p>
+
+  <script>
+    function checkWeather() {
+      const code = parseInt(document.getElementById("weatherInput").value);
+      let weather;
+
+      switch (code) {
+        case 1:
+          weather = "მზიანი";
+          break;
+        case 2:
+          weather = "წვიმიანი";
+          break;
+        case 3:
+          weather = "მოღრუბლული";
+          break;
+        case 4:
+          weather = "ქარიანი";
+          break;
+        default:
+          weather = "არ არის დადგენილი";
+      }
+
+      document.getElementById("weatherResult").innerText = `ამინდი: ${weather}`;
+    }
+  </script>
+
+</body>
+</html>

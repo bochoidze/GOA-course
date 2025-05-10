@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Name და FizzBuzz</title>
+</head>
+<body>
+
+  <h2>შემთხვევითი გადამხდელი</h2>
+  <button onclick="choosePayer()">ვინ გადაიხდის?</button>
+  <p id="payerResult"></p>
+
+  <h2>FizzBuzz რიცხვების მიხედვით</h2>
+  <label>შეიყვანე რიცხვი:</label>
+  <input type="number" id="numberInput">
+  <button onclick="checkFizzBuzz()">შეამოწმე</button>
+  <p id="fizzbuzzResult"></p>
+
+  <script>
+    function choosePayer() {
+      const names = ["ანა", "ლევან", "მარი", "გიორგი", "თამარი"];
+      const randomIndex = Math.floor(Math.random() * names.length);
+      const chosen = names[randomIndex];
+      document.getElementById("payerResult").innerText = `${chosen} გადაიხდის ყველას საკვებზე 😊`;
+    }
+
+    function checkFizzBuzz() {
+      const number = parseInt(document.getElementById("numberInput").value);
+      let result = "";
+
+      if (number % 3 === 0 && number % 5 === 0) {
+        result = "FizzBuzz";
+      } else if (number % 3 === 0) {
+        result = "Fizz";
+      } else if (number % 5 === 0) {
+        result = "Buzz";
+      } else {
+        result = "რიცხვი არ იყოფა 3 ან 5-ზე";
+      }
+
+      document.getElementById("fizzbuzzResult").innerText = result;
+    }
+  </script>
+
+</body>
+</html>

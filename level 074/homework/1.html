@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>კვირის დღე switch-ით</title>
+</head>
+<body>
+
+  <h2>შეიყვანე რიცხვი (1-დან 7-მდე):</h2>
+  <input type="number" id="dayInput" min="1" max="7">
+  <button onclick="checkDay()">გადამოწმება</button>
+
+  <p id="result"></p>
+
+  <script>
+    function checkDay() {
+      const dayNumber = parseInt(document.getElementById("dayInput").value);
+      let dayName;
+
+      switch (dayNumber) {
+        case 1:
+          dayName = "ორშაბათი";
+          break;
+        case 2:
+          dayName = "სამშაბათი";
+          break;
+        case 3:
+          dayName = "ოთხშაბათი";
+          break;
+        case 4:
+          dayName = "ხუთშაბათი";
+          break;
+        case 5:
+          dayName = "პარასკევი";
+          break;
+        case 6:
+          dayName = "შაბათი";
+          break;
+        case 7:
+          dayName = "კვირა";
+          break;
+        default:
+          dayName = "არასწორი დღე";
+      }
+
+      document.getElementById("result").innerText = dayName;
+    }
+  </script>
+
+</body>
+</html>

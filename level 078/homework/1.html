@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>თვე და ნახევარი</title>
+</head>
+<body>
+
+  <h2>შეიყვანე თვეს შეესაბამება რიცხვი (1-12):</h2>
+  <input type="number" id="monthInput" min="1" max="12">
+  <button onclick="checkMonth()">შეამოწმე</button>
+
+  <p id="monthResult"></p>
+  <p id="halfResult"></p>
+
+  <script>
+    function checkMonth() {
+      const monthNum = parseInt(document.getElementById("monthInput").value);
+      let monthName;
+
+      switch (monthNum) {
+        case 1:
+          monthName = "იანვარი";
+          break;
+        case 2:
+          monthName = "თებერვალი";
+          break;
+        case 3:
+          monthName = "მარტი";
+          break;
+        case 4:
+          monthName = "აპრილი";
+          break;
+        case 5:
+          monthName = "მაისი";
+          break;
+        case 6:
+          monthName = "ივნისი";
+          break;
+        case 7:
+          monthName = "ივლისი";
+          break;
+        case 8:
+          monthName = "აგვისტო";
+          break;
+        case 9:
+          monthName = "სექტემბერი";
+          break;
+        case 10:
+          monthName = "ოქტომბერი";
+          break;
+        case 11:
+          monthName = "ნოემბერი";
+          break;
+        case 12:
+          monthName = "დეკემბერი";
+          break;
+        default:
+          monthName = "არასწორი თვე";
+      }
+
+
+      const half = (monthNum >= 1 && monthNum <= 12) ?
+        (monthNum <= 6 ? "პირველი ნახევარი" : "მეორე ნახევარი") :
+        "ვერ განისაზღვრა";
+
+      
+      document.getElementById("monthResult").innerText = `თვე: ${monthName}`;
+      document.getElementById("halfResult").innerText = `ნახევარი: ${half}`;
+    }
+  </script>
+
+</body>
+</html>

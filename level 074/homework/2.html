@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>ამინდის პროგნოზი და თარიღის შეფასება</title>
+</head>
+<body>
+
+  <h2>ამინდის პროგნოზი</h2>
+  <label>შეიყვანე რიცხვი (1-4):</label>
+  <input type="number" id="weatherInput" min="1" max="4">
+  <button onclick="checkWeather()">შეფასება</button>
+  <p id="weatherResult"></p>
+
+  <h2>თარიღის შეფასება (მაისი)</h2>
+  <label>შეიყვანე რიცხვი (1-31):</label>
+  <input type="number" id="dateInput" min="1" max="31">
+  <button onclick="checkDate()">შეამოწმე</button>
+  <p id="dateResult"></p>
+
+  <script>
+    function checkWeather() {
+      const weatherCode = parseInt(document.getElementById("weatherInput").value);
+      let weather;
+
+      switch (weatherCode) {
+        case 1:
+          weather = "მზიანი";
+          break;
+        case 2:
+          weather = "წვიმიანი";
+          break;
+        case 3:
+          weather = "მოღრუბლული";
+          break;
+        case 4:
+          weather = "ქარიანი";
+          break;
+        default:
+          weather = "არ არის დადგენილი";
+      }
+
+      document.getElementById("weatherResult").innerText = `ამინდი: ${weather}`;
+    }
+
+    function checkDate() {
+      const day = parseInt(document.getElementById("dateInput").value);
+      const half = (day >= 1 && day <= 31) ? (day <= 15 ? "პირველი ნახევარი" : "მეორე ნახევარი") : "არასწორი რიცხვი";
+      document.getElementById("dateResult").innerText = `შეფასება: ${half}`;
+    }
+  </script>
+
+</body>
+</html>

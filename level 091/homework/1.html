@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Functions</title>
+</head>
+<body>
+
+  <h2>Array Function Demos</h2>
+  <button onclick="runFunctions()">Run Array Functions</button>
+  <pre id="output"></pre>
+
+  <script>
+  
+    function countElements(arr) {
+      return arr.length;
+    }
+
+
+    function concatenateArrays(arr1, arr2) {
+      return arr1.concat(arr2);
+    }
+
+
+    function pushValue(arr, value) {
+      return arr.push(value); 
+    }
+
+    function popValue(arr) {
+      return arr.pop();
+    }
+
+
+    function concatAndPush(arr1, arr2, newValue) {
+      const combined = arr1.concat(arr2);
+      combined.push(newValue);
+      return combined;
+    }
+
+ 
+    function runFunctions() {
+      let output = "";
+
+      const arr1 = [1, 2, 3];
+      const arr2 = [4, 5, 6];
+
+      output += `1. Count Elements: ${countElements(arr1)}\n`;
+
+      const concatenated = concatenateArrays(arr1, arr2);
+      output += `2. Concatenate: [${concatenated}]\n`;
+
+      const arr3 = [10, 20];
+      const newLength = pushValue(arr3, 30);
+      output += `3. After Push: [${arr3}], New Length: ${newLength}\n`;
+
+      const arr4 = ["a", "b", "c"];
+      const popped = popValue(arr4);
+      output += `4. After Pop: [${arr4}], Removed Element: ${popped}\n`;
+
+      const finalArray = concatAndPush([100, 200], [300], 400);
+      output += `5. Concat & Push: [${finalArray}]\n`;
+
+      document.getElementById("output").innerText = output;
+    }
+  </script>
+
+</body>
+</html>

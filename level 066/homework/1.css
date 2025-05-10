@@ -1,0 +1,73 @@
+.element1 {
+    color: var(--color-1);
+    background-color: var(--bg-color-1);
+    font-size: var(--font-size-1);
+    letter-spacing: var(--letter-spacing-1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin: 10px;
+    position: relative;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.element1:hover {
+    transform: scale(1.1);
+}
+
+.element2 {
+    color: var(--color-2);
+    background-color: var(--bg-color-2);
+    font-size: var(--font-size-2);
+    letter-spacing: var(--letter-spacing-2);
+    display: grid;
+    place-items: center;
+    height: 100px;
+    margin: 10px;
+    padding: 15px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.element2:hover {
+    background-color: #add8e6;
+}
+
+.element3 {
+    color: var(--color-3);
+    background-color: var(--bg-color-3);
+    font-size: var(--font-size-3);
+    letter-spacing: var(--letter-spacing-3);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100px;
+    margin: 10px;
+    padding: 20px;
+    position: absolute;
+    top: 200px;
+    left: 1000px;
+    transition: margin 0.3s ease;
+}
+
+.element3:hover {
+    margin-left: 50px;
+}
+:root {
+    --color-1: #ff6347;
+    --color-2: #4682b4;
+    --color-3: #32cd32;
+    --bg-color-1: #f0f8ff;
+    --bg-color-2: #fffacd;
+    --bg-color-3: #d3f9e3;
+    --font-size-1: 16px;
+    --font-size-2: 18px;
+    --font-size-3: 20px;
+    --letter-spacing-1: 1px;
+    --letter-spacing-2: 1.5px;
+    --letter-spacing-3: 2px;
+}

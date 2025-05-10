@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Click Example</title>
+  <style>
+    img {
+      width: 200px;
+      cursor: pointer;
+    }
+    table {
+      border-collapse: collapse;
+      cursor: pointer;
+    }
+    table, th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <button onclick="handleButtonClick()">Click Me</button>
+
+  <br><br>
+  <img src="https://via.placeholder.com/200" alt="Example Image" onclick="handleImageClick()">
+
+  <br><br>
+  <table onclick="handleTableClick()">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>John</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>Anna</td>
+      <td>25</td>
+    </tr>
+  </table>
+
+  <script>
+    function handleButtonClick() {
+      console.log("Button is clicked!");
+      alert("Button is clicked!");
+    }
+
+    function handleImageClick() {
+      console.log("Image is Clicked!");
+      alert("Image is Clicked!");
+    }
+
+    function handleTableClick() {
+      console.log("Table is Clicked!");
+      alert("Table is Clicked!");
+    }
+  </script>
+
+</body>
+</html>
