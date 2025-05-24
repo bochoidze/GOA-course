@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM წამოღების მეთოდები</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+
+  <h1 id="main-title">ძველი სათაური</h1>
+
+  <p class="note">პირველი შენიშვნა</p>
+  <p class="note">მეორე შენიშვნა</p>
+
+  <ul>
+    <li>ელემენტი 1</li>
+    <li>ელემენტი 2</li>
+    <li>ელემენტი 3</li>
+  </ul>
+
+  <div class="card">
+    <p>ეს არის ბარათის პარა.</p>
+  </div>
+
+  <div class="box">ბოქსი 1</div>
+  <div class="box">ბოქსი 2</div>
+  <div class="box">ბოქსი 3</div>
+
+  <script>
+    // 1. getElementById() - აიღე ელემენტი ID-ის მიხედვით
+    let title = document.getElementById('main-title');
+    title.textContent = "გამარჯობა, MasterJaneza!";
+
+    // 2. getElementsByClassName() - აიღე ყველა ელემენტი კონკრეტული კლასით
+    let notes = document.getElementsByClassName('note');
+    for (let i = 0; i < notes.length; i++) {
+      notes[i].style.color = 'red'; // გავუწითლოთ ტექსტი
+      notes[i].style.fontWeight = 'bold'; // გავუქსოვოთ ტექსტი
+    }
+
+    // 3. getElementsByTagName() - აიღე ყველა ელემენტი კონკრეტული თეგით
+    let items = document.getElementsByTagName('li');
+    console.log("რამდენი <li>: ", items.length); // კონსოლში დაბეჭდავს რაოდენობას
+    for (let i = 0; i < items.length; i++) {
+      items[i].style.border = '1px dashed green'; // დავუმატოთ საზღვარი
+    }
+
+    // 4. querySelector() - აიღე პირველი ელემენტი CSS სელექტორით
+    let cardParagraph = document.querySelector('.card p');
+    cardParagraph.textContent = "გადაწერილი ტექსტი querySelector()-ით!";
+
+    // 5. querySelectorAll() - აიღე ყველა ელემენტი CSS სელექტორით
+    let boxes = document.querySelectorAll('.box');
+    boxes.forEach(function(box) {
+      box.classList.add('highlighted'); // დავამატოთ highlight კლასი
+    });
+  </script>
+
+</body>
+</html>

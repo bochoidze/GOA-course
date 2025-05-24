@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>რეგისტრაციის ფორმა</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input {
+      display: block;
+      margin: 10px auto;
+      padding: 5px;
+    }
+    #warning {
+      color: white;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="outer">
+    <div id="inner">
+      <form id="registrationForm">
+        <input type="text" id="name" placeholder="სახელი" />
+        <input type="text" id="surname" placeholder="გვარი" />
+        <input type="email" id="email" placeholder="ემაილი" />
+        <input type="password" id="password" placeholder="პაროლი" />
+        <input type="password" id="confirmPassword" placeholder="გაიმეორეთ პაროლი" />
+        <button type="button" id="button">რეგისტრაცია</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="warning"></div>
+
+  <ul id="myList">
+    <li>ელემენტი 1</li>
+    <li>ელემენტი 2</li>
+    <li>ელემენტი 3</li>
+  </ul>
+
+  <script>
+  
+    const formButton = document.getElementById("button");
+    const warning = document.getElementById("warning");
+    formButton.addEventListener("click", () => {
+      const name = document.getElementById("name").value.trim();
+      const surname = document.getElementById("surname").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (!name || !surname || !email || !password || !confirmPassword) {
+        alert("გთხოვთ შეავსოთ ყველა ველი!");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        document.body.style.backgroundColor = "red";
+        warning.textContent = "Warning";
+        warning.style.color = "white";
+        return;
+      }
+
+      document.body.style.backgroundColor = "lightgreen";
+      warning.textContent = "successfullylogin";
+      warning.style.color = "white";
+    });
+
+
+    const outer = document.getElementById("outer");
+    const inner = document.getElementById("inner");
+    const button = document.getElementById("button");
+
+    outer.addEventListener("click", () => {
+      console.log("outer clicked");
+    });
+
+    inner.addEventListener("click", () => {
+      console.log("inner clicked");
+    });
+
+    button.addEventListener("click", () => {
+      console.log("button clicked");
+    });
+
+
+    const myList = document.getElementById("myList");
+    myList.addEventListener("click", (event) => {
+      if (event.target.tagName === "LI") {
+        console.log("დაწკაპუნებული ელემენტი:", event.target.textContent);
+      }
+    });
+  </script>
+</body>
+</html>

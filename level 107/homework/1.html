@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM Tasks Combined</title>
+  <style>
+    .note {
+      margin: 5px;
+    }
+
+    .highlighted {
+      background-color: lightblue;
+      padding: 10px;
+    }
+
+    .dynamic-box {
+      background-color: #f0f0f0;
+      border: 2px dashed #333;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .highlight {
+      background: yellow;
+      font-weight: bold;
+    }
+
+    .offline {
+      color: red;
+    }
+
+    .online {
+      color: green;
+    }
+
+    .box {
+      border: 1px solid gray;
+      padding: 5px;
+      margin: 5px;
+    }
+
+    .card {
+      border: 1px solid black;
+      padding: 10px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="main-title">Original Title</h1>
+
+  <p class="note">Note 1</p>
+  <p class="note">Note 2</p>
+
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <div class="card">
+    <p>Card paragraph here</p>
+  </div>
+
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+
+  <button id="toggle-btn">Toggle Highlight</button>
+  <p id="toggle-target">Click the button to toggle me!</p>
+
+  <button id="clear-btn">Clear List</button>
+
+  <p id="status" class="offline">Offline</p>
+  <button id="status-btn">Toggle Status</button>
+
+  <script>
+
+    document.getElementById('main-title').textContent = "Hello, MasterJaneza!";
+
+    let notes = document.getElementsByClassName('note');
+    for (let i = 0; i < notes.length; i++) {
+      notes[i].style.color = 'red';
+      notes[i].style.fontWeight = 'bold';
+    }
+    let liElements = document.getElementsByTagName('li');
+    console.log("Total <li> elements:", liElements.length);
+    for (let i = 0; i < liElements.length; i++) {
+      liElements[i].style.border = '1px solid black';
+    }
+
+
+    let cardParagraph = document.querySelector('.card p');
+    cardParagraph.textContent = "Updated by querySelector()";
+
+
+    let boxes = document.querySelectorAll('.box');
+    boxes.forEach(box => box.classList.add('highlighted'));
+
+
+    let newDiv = document.createElement('div');
+    newDiv.classList.add('dynamic-box');
+    newDiv.textContent = "I'm alive!";
+    document.body.appendChild(newDiv);
+
+
+    document.getElementById('toggle-btn').addEventListener('click', function() {
+      document.getElementById('toggle-target').classList.toggle('highlight');
+    });
+
+  
+    document.getElementById('clear-btn').addEventListener('click', function() {
+      let ul = document.querySelector('ul');
+      while (ul.firstChild) {
+        ul.removeChild(ul.firstChild);
+      }
+    });
+
+    document.getElementById('status-btn').addEventListener('click', function() {
+      let status = document.getElementById('status');
+      if (status.classList.contains('offline')) {
+        status.classList.replace('offline', 'online');
+        status.textContent = "Online";
+      } else {
+        status.classList.replace('online', 'offline');
+        status.textContent = "Offline";
+      }
+    });
+  </script>
+</body>
+</html>
