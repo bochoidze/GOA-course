@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const sum = (a, b = 0) => a + b;
+
+const getFullName = ({ firstName, lastName = "Doe" }) => `${firstName} ${lastName}`;
+
+const sumArray = (arr = [1, 2, 3]) => arr.reduce((acc, val) => acc + val, 0);
+
+const concatStrings = (str1, str2 = "") => str1 + str2;
+
+const runFunction = (fn = () => 10) => fn();
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+const car = {
+  brand: "Toyota",
+  model: "Corolla",
+  color: "White"
+};
+
+
+
+for (let key in car) {
+  console.log(key);
+}
+
+for (let key in car) {
+  console.log(car[key]);
+}
+
+
+const finalText = `მე მყავს მანქანა, რომელიც არის ${car.color} ფერის ${car.brand} და მისი მოდელია ${car.model}.`;
+console.log("\n" + finalText);
+    </script>
+</body>
+</html>

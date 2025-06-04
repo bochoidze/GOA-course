@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkType(value) {
+  return (value !== Object(value)) ? "primitive" : "non-primitive";
+}
+
+function allFalsy(arr) {
+  return arr.every(item => !item);
+}
+
+function removeFalsy(arr) {
+  return arr.filter(Boolean);
+}
+
+function countTruthiesAndFalsies(arr) {
+  let truthy = 0;
+  let falsy = 0;
+  for (let item of arr) {
+    if (item) truthy++;
+    else falsy++;
+  }
+  return { truthy, falsy };
+}
+
+let a = "hello";
+let b = a;
+b = "world";
+
+console.log(a);
+console.log(b);
+
+let x = { name: "Janeza" };
+let y = x;
+y.name = "Master";
+
+console.log(x.name);
+console.log(y.name);
+
+const arr = ["JS", "React", "Node"];
+
+console.log("Using for...in:");
+for (let key in arr) {
+  console.log(key);
+}
+
+console.log("Using for...of:");
+for (let value of arr) {
+  console.log(value);
+}
+
+const obj = { a: 1, b: 2, c: 3 };
+const nums = [10, 20, 30];
+
+for (let key in obj) {
+  console.log(key);
+}
+
+for (let value of nums) {
+  console.log(value);
+}
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

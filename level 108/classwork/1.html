@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // გლობალური ცვლადი
+let globalVar = "globaal";
+
+function exampleFunction() {
+  // ლოკალური ცვლადი
+  let localVar = "logall";
+
+  // ლოკალურ ცვლადზე წვდომა ფუნქციის შიგნით შესაძლებელია
+  console.log(localVar);
+
+  // გლობალურ ცვლადზე წვდომა ფუნქციის შიგნითაც შესაძლებელია
+  console.log(globalVar); 
+}
+
+exampleFunction();
+
+//არ იმუშავებს
+console.log(localVar); 
+
+// გლობალურ ცვლადზე წვდომა ფუნქციის გარეთაც შესაძლებელია
+console.log(globalVar); 
+    </script>
+</body>
+</html>

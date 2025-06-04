@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ობიექტის თვისებების გამოტანა
+let person = {
+  name: "Nika",
+  age: 30,
+  city: "Tbilisi"
+};
+
+for (let key in person) {
+  console.log(key, person[key]);
+}
+
+// ობიექტის გასაღებების სია
+let books = {
+  "Book1": "Author1",
+  "Book2": "Author2",
+  "Book3": "Author3"
+};
+
+let bookNames = [];
+for (let key in books) {
+  bookNames.push(key);
+}
+console.log(bookNames);
+
+// მასივის ელემენტების ჯამი
+let numbers = [1, 2, 3, 4, 5];
+let sum = 0;
+for (let num of numbers) {
+  sum += num;
+}
+console.log(sum);
+
+// სტრიქონის სიმბოლოების გამოტანა
+let str = "Hello World";
+for (let char of str) {
+  console.log(char);
+}
+
+// მასივის ელემენტების ფილტრაცია
+let strings = ["apple", "banana", "cat", "dog", "elephant"];
+for (let item of strings) {
+  if (item.length > 5) {
+    console.log(item);
+  }
+}
+
+// ობიექტის ფასების ჯამი
+let products = {
+  bread: 2,
+  milk: 3,
+  eggs: 4
+};
+
+let total = 0;
+for (let key in products) {
+  total += products[key];
+}
+console.log(total);
+
+// ობიექტის თვისებების ფილტრაცია
+let mixed = {
+  name: "Luka",
+  age: 25,
+  isActive: true,
+  height: 180
+};
+
+for (let key in mixed) {
+  if (typeof mixed[key] === "number") {
+    console.log(mixed[key]);
+  }
+}
+
+// მასივის ელემენტების გარდაქმნა
+let nums = [1, 2, 3, 4, 5];
+let squares = [];
+for (let n of nums) {
+  squares.push(n * n);
+}
+console.log(squares);
+    </script>
+</body>
+</html>

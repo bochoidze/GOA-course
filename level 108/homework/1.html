@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    let score = 0;
+
+function increaseScore() {
+  score += 10;
+}
+
+increaseScore();
+increaseScore();
+console.log("Final Score:", score);
+
+function secretCode() {
+  let code = '1234';
+  console.log("Inside function:", code);
+}
+
+secretCode();
+// console.log("Outside function:", code); // ReferenceError
+
+let name = "World";
+
+function greet() {
+  let name = "Alice";
+  console.log("Inside function:", name);
+}
+
+greet();
+console.log("Outside function:", name);
+
+function counterGame() {
+  let counter = 0;
+  counter += 1;
+  console.log("Counter:", counter);
+}
+
+counterGame();
+counterGame();
+counterGame();
+
+function test() {
+  y = 5;
+}
+
+test();
+console.log("y:", y);
+
+const add = (a, b) => a + b;
+const double = (n) => n * 2;
+
+console.log(add(3, 4));
+console.log(double(5));
+
+
+   </script> 
+</body>
+</html>
