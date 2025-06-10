@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    const numbers = [2, 4, 6, 8];
+const allEven = numbers.every(num => num % 2 === 0);
+
+const strings = ["apple", "banana", "kiwi"];
+const hasLongString = strings.some(str => str.length > 5);
+
+const users = [
+  { name: "Anna", age: 22 },
+  { name: "Ben", age: 30 },
+  { name: "Cara", age: 19 }
+];
+const allAdults = users.every(user => user.age >= 18);
+
+const products = [
+  { name: "Pen", price: 2.5 },
+  { name: "Notebook", price: 25 },
+  { name: "Pencil", price: 1 }
+];
+const hasAffordableProduct = products.some(product => product.price < 20);
+   </script>
+</body>
+</html>

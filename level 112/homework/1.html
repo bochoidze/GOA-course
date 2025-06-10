@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Task 1
+const users = [
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" },
+  { id: 3, name: "Charlie" }
+];
+const userWithId3 = users.find(user => user.id === 3);
+
+// Task 2
+const colors = ["red", "green", "blue"];
+colors.reverse();
+
+// Task 3
+const prices = [19.99, 5.99, 100, 49.5];
+prices.sort((a, b) => b - a);
+
+// Task 4
+const str = "hello";
+const characters = Array.from(str);
+
+// Task 5
+const data1 = [1, 2, 3];
+const data2 = "hello";
+const isData1Array = Array.isArray(data1);
+const isData2Array = Array.isArray(data2);
+    </script>
+</body>
+</html>
