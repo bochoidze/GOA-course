@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+const numbers1 = [2, 4, 6, 8];
+const allEven = numbers1.every(num => num % 2 === 0);
+
+const strings = ["apple", "banana", "cat"];
+const hasLongString = strings.some(str => str.length > 5);
+
+
+const numbers2 = [1, 2, 3, 4];
+const doubledNumbers = [];
+numbers2.forEach(num => doubledNumbers.push(num * 2));
+
+
+const users = [
+  { name: "Alice", age: 20 },
+  { name: "Bob", age: 25 },
+  { name: "Charlie", age: 18 }
+];
+const allAdults = users.every(user => user.age >= 18);
+
+
+const products = [
+  { name: "Pen", price: 10 },
+  { name: "Notebook", price: 25 }
+];
+const hasAffordableProduct = products.some(product => product.price < 20);
+
+
+const userList = [
+  { name: "Anna", email: "anna@example.com" },
+  { name: "Tom", email: "tom@example.com" }
+];
+const formattedEmails = userList.map(user => `<${user.email}>`);
+
+
+const numbers3 = [1, 2, 3, 4, 5, 6];
+const squaredEvens = numbers3.filter(num => num % 2 === 0).map(num => num * num);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

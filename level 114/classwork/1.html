@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1
+const numbers = [2, 4, 6, 8, 10];
+numbers.forEach(n => console.log(n, n * n));
+
+// 2
+const prices = [10, 20, 30];
+const total = prices.reduce((a, b) => a + b, 0);
+console.log(total);
+
+// 3
+const nums = [10, 5, 2, 7, 19, 203];
+const result = nums.reduceRight((a, b) => b - a);
+console.log(result);
+    </script>
+</body>
+</html>
