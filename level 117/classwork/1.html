@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const colors = ['red', 'green', 'blue'];
+const [firstColor, secondColor, thirdColor] = colors;
+
+console.log(firstColor);
+console.log(secondColor);
+console.log(thirdColor);
+
+
+const user = {
+  name: 'Luka',
+  age: 14
+};
+const { name, age } = user;
+
+console.log(name);
+console.log(age);
+
+
+const person = {
+  name: 'Nino',
+  hobbies: ['reading', 'dancing']
+};
+const { name: personName, hobbies: [hobby1, hobby2] } = person;
+
+console.log(personName);
+console.log(hobby1);
+console.log(hobby2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // მაგალითი 1 – ცვლადები ობიექტში shorthand-ით
+const name = "Luka";
+const age = 25;
+
+const person = {
+  name,
+  age
+};
+
+console.log(person);
+// შედეგი: { name: 'Luka', age: 25 }
+
+
+// მაგალითი 2 – ობიექტის მეთოდების shorthand
+const dog = {
+  breed: "Labrador",
+  bark() {
+    console.log("Woof!");
+  }
+};
+
+dog.bark(); // Woof!
+
+
+// მაგალითი 3 – Computed Property Names
+const key = "country";
+
+const data = {
+  [key]: "Georgia",
+  population: 3.7
+};
+
+console.log(data);
+// შედეგი: { country: 'Georgia', population: 3.7 }
+
+
+// მაგალითი 4 – ფუნქციის პარამეტრებიდან shorthand ობიექტი
+function createUser(username, email) {
+  return {
+    username,
+    email
+  };
+}
+
+console.log(createUser("mari", "mari@mail.com"));
+// შედეგი: { username: 'mari', email: 'mari@mail.com' }
+
+
+// მაგალითი 5 – shorthand + computed property ერთად
+const propName = "isAdmin";
+const isAdmin = true;
+
+const user = {
+  name: "Nino",
+  [propName]: isAdmin,
+  greet() {
+    console.log(`Hello, ${this.name}`);
+  }
+};
+
+console.log(user);
+// შედეგი: { name: 'Nino', isAdmin: true }
+
+user.greet(); // Hello, Nino
+    </script>
+</body>
+</html>
