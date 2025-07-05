@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Task 1
+function filterAndSum(threshold, ...numbers) {
+    return numbers.filter(n => n > threshold).reduce((sum, n) => sum + n, 0);
+}
+
+// Task 2
+const product = {
+    id: 101,
+    name: "Laptop",
+    price: 1200,
+    brand: "TechCorp",
+    color: "Silver",
+    weight: "2kg"
+};
+const { id, name, ...details } = product;
+console.log(id, name, details);
+
+// Task 3
+function combineArrays(str, ...arrays) {
+    return [str, ...arrays.flat()];
+}
+
+// Task 4
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 4 };
+const combinedObj = { ...obj1, ...obj2 };
+console.log(combinedObj);
+
+// Task 5
+const numbers = [10, 20, 30];
+const newNumbers = [...numbers, 40, 50];
+console.log(numbers);
+console.log(newNumbers);
+
+// Task 6
+function getMax(a, b, c) {
+    return Math.max(a, b, c);
+}
+const values = [25, 10, 35, 5];
+console.log(getMax(...values.slice(0, 3)));
+    </script>
+</body>
+</html>
