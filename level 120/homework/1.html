@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Task 1
+const getFullName = (firstName, lastName) => firstName + " " + lastName;
+
+console.log(getFullName("John", "Doe"));
+
+// Task 2
+const square = num => num * num;
+
+console.log(square(5));
+
+// Task 3
+const numbers = [1, 2, 3, 4, 5];
+const [first, , , , last] = numbers;
+
+console.log(first);
+console.log(last);
+
+// Task 4
+const student = { name: 'Emma', age: 20 };
+const { name: studentName, age: studentAge } = student;
+
+console.log(studentName);
+console.log(studentAge);
+
+// Task 5
+const product = {
+  id: 101,
+  details: {
+    name: "Laptop",
+    price: 1200
+  }
+};
+
+const { details: { name: productName, price: productPrice } } = product;
+
+console.log(productName);
+console.log(productPrice);
+
+// Task 6
+const car = { make: 'Toyota', model: 'Camry', year: 2020 };
+
+for (let key in car) {
+  console.log(key, car[key]);
+}
+
+// Task 7
+const colors = ['red', 'green', 'blue'];
+
+for (let color of colors) {
+  console.log(color);
+}
+    </script>
+</body>
+</html>

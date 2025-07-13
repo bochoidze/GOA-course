@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// ობიექტი
+const person = {
+  name: "ლყკა",
+  age: 14,
+  country: "საქართველო"
+};
+
+// for in → გადადის ობიექტის key-ებზე
+for (let key in person) {
+  console.log(key, person[key]);
+}
+
+// მასივი
+const colors = ["წითელი", "ლურჯი", "მწვანე"];
+
+// for  of → გადადის მასივის მნიშვნელობებზე
+for (let color of colors) {
+  console.log(color);
+}
+
+// Arrow function → მოკლე ფორმა ფუნქციის
+const add = (a, b) => a + b;
+
+console.log(add(5, 3));
+    </script>
+</body>
+</html>
