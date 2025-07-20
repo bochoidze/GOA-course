@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+let countriesAndCapitals = new Map([
+    ["USA", "Washington, D.C."],
+    ["France", "Paris"],
+    ["Germany", "Berlin"],
+    ["Japan", "Tokyo"],
+    ["India", "New Delhi"]
+]);
+
+countriesAndCapitals.forEach((capital, country) => {
+    console.log(`The capital of ${country} is ${capital}`);
+});
+
+countriesAndCapitals.set("Australia", "Canberra");
+countriesAndCapitals.set("Canada", "Ottawa");
+countriesAndCapitals.delete("Germany");
+
+countriesAndCapitals.forEach((capital, country) => {
+    console.log(`The capital of ${country} is ${capital}`);
+});
+
+let exists = countriesAndCapitals.has("India");
+console.log(exists ? "Yes" : "No");
+
+countriesAndCapitals.forEach((capital, country) => {
+    console.log(`The capital of ${country} is ${capital}`);
+});
+
+let mapArray = Array.from(countriesAndCapitals);
+console.log(mapArray);
+
+let newMap = new Map(mapArray);
+newMap.forEach((capital, country) => {
+    console.log(`The capital of ${country} is ${capital}`);
+});
+
+function sortMapByKeys(map) {
+    let sortedArray = Array.from(map).sort((a, b) => a[0].localeCompare(b[0]));
+    return new Map(sortedArray);
+}
+
+let sortedMap = sortMapByKeys(countriesAndCapitals);
+sortedMap.forEach((capital, country) => {
+    console.log(`The capital of ${country} is ${capital}`);
+});
+
+function countWordOccurrences(sentence) {
+    let words = sentence.split(' ');
+    let wordCountMap = new Map();
+    words.forEach(word => {
+        word = word.toLowerCase();
+        wordCountMap.set(word, (wordCountMap.get(word) || 0) + 1);
+    });
+    return wordCountMap;
+}
+
+let sentence = "this is a test and this is fun";
+let wordCounts = countWordOccurrences(sentence);
+wordCounts.forEach((count, word) => {
+    console.log(`${word}: ${count}`);
+});
+    </script>
+</body>
+</html>
