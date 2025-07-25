@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Set Task 1
+
+// 1. Create a new set
+let mySet = new Set();
+
+// 2. Add values to a set
+mySet.add(1);
+mySet.add(2);
+mySet.add(3);
+
+// 3. Check if a value exists
+console.log(mySet.has(2)); // true
+
+// 4. Get the size of a set
+console.log(mySet.size); // 3
+
+// 5. Delete a value
+mySet.delete(2);
+
+// 6. Clear all values
+mySet.clear();
+
+// 7. Iterate over values using forEach
+mySet.add(10);
+mySet.add(20);
+mySet.forEach(value => console.log("forEach:", value));
+
+// 8. Convert a Set to an Array
+let arrFromSet = [...mySet];
+console.log("Array:", arrFromSet);
+
+// 9. Union of two Sets
+let setA = new Set([1, 2, 3]);
+let setB = new Set([3, 4, 5]);
+let union = new Set([...setA, ...setB]);
+console.log("Union:", union);
+
+// 10. Intersection of two Sets
+let intersection = new Set([...setA].filter(x => setB.has(x)));
+console.log("Intersection:", intersection);
+
+
+// Set Task 2
+
+// 1. Create a Set with 5 numbers
+let numberSet = new Set([1, 2, 3, 4, 5]);
+
+// 2. Add an item to a Set
+let fruits = new Set(["apple", "banana"]);
+fruits.add("orange");
+
+// 3. Try to add a duplicate item
+fruits.add("apple"); // does nothing
+console.log("Fruits:", fruits);
+
+// 4. Check if a Set has a value
+console.log(fruits.has("banana")); // true
+
+// 5. Remove an item from a Set
+fruits.delete("banana");
+console.log("After delete:", fruits);
+
+// 6. Loop through a Set (favorite colors)
+let colors = new Set(["red", "blue", "green"]);
+for (let color of colors) {
+  console.log("Color:", color);
+}
+
+// 7. Convert Set to Array
+let nameSet = new Set(["Ana", "Luka", "Nina"]);
+let nameArray = [...nameSet];
+console.log("Names Array:", nameArray);
+
+// 8. Remove duplicates using Set
+let numbersWithDup = [1, 2, 2, 3, 3, 4];
+let noDup = [...new Set(numbersWithDup)];
+console.log("No Duplicates:", noDup);
+
+// 9. Count unique items
+let letters = ['a', 'b', 'a', 'c', 'b'];
+let uniqueCount = new Set(letters).size;
+console.log("Unique letters:", uniqueCount);
+
+// 10. Clear all items
+let tempSet = new Set([1, 2, 3]);
+tempSet.clear();
+console.log("Cleared set:", tempSet);
+
+
+// Set Task 3
+
+// 1. Empty Set
+let pets = new Set();
+console.log("Empty set:", pets);
+
+// 2. Add items
+pets.add("cat");
+pets.add("dog");
+pets.add("parrot");
+
+// 3. Check if item exists
+console.log(pets.has("dog")); // true
+
+// 4. Remove item
+pets.delete("parrot");
+console.log("After delete:", pets);
+
+// 5. Size
+console.log("Pet count:", pets.size);
+
+// 6. Loop with for...of
+let nums = new Set([10, 20, 30]);
+for (let n of nums) {
+  console.log("Num:", n);
+}
+
+// 7. Clear Set
+nums.clear();
+console.log("Cleared nums:", nums);
+
+// 8. Create from array
+let arrWithDup = [1, 2, 2, 3, 4, 4];
+let uniqueSet = new Set(arrWithDup);
+console.log("Unique from array:", uniqueSet);
+
+// 9. Convert Set to Array
+let arrAgain = [...uniqueSet];
+console.log("Array again:", arrAgain);
+
+// 10. Check for duplicates in array
+function hasDuplicates(array) {
+  return new Set(array).size !== array.length;
+}
+console.log("Has duplicates:", hasDuplicates([1, 2, 3, 2]));
+
+
+// Set Task 4 (Medium)
+
+// 1. Unique words from sentence
+let sentence = "The sun shines and the moon glows";
+let words = sentence.toLowerCase().split(" ");
+let uniqueWords = new Set(words);
+console.log("Unique words:", uniqueWords);
+
+// 2. Intersection function
+function getIntersection(set1, set2) {
+  return new Set([...set1].filter(x => set2.has(x)));
+}
+console.log("Set intersection:", getIntersection(new Set([1,2,3]), new Set([2,3,4])));
+
+// 3. Difference function
+function getDifference(setA, setB) {
+  return new Set([...setA].filter(x => !setB.has(x)));
+}
+console.log("Difference:", getDifference(new Set([1,2,3]), new Set([2,3,4])));
+
+// 4. Count unique characters
+function countUniqueChars(str) {
+  return new Set(str).size;
+}
+console.log("Unique chars:", countUniqueChars("moon")); // 3
+
+// 5. Check same unique values
+function sameUniqueValues(arr1, arr2) {
+  let set1 = new Set(arr1);
+  let set2 = new Set(arr2);
+  if (set1.size !== set2.size) return false;
+  for (let val of set1) {
+    if (!set2.has(val)) return false;
+  }
+  return true;
+}
+console.log("Same uniques:", sameUniqueValues([1,2,2,3], [3,1,2]));
+
+// 6. Remove duplicate subarrays
+function removeDuplicateSubarrays(arr2D) {
+  let seen = new Set();
+  return arr2D.filter(sub => {
+    let key = JSON.stringify(sub);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+console.log("Unique subarrays:", removeDuplicateSubarrays([[1,2],[2,3],[1,2]]));
+
+// 7. Filter unique objects by key
+function filterUniqueObjects(arr) {
+  let seen = new Set();
+  return arr.filter(obj => {
+    if (seen.has(obj.id)) return false;
+    seen.add(obj.id);
+    return true;
+  });
+}
+console.log("Unique objects:", filterUniqueObjects([{id:1},{id:2},{id:1}]));
+
+// 8. Unique visitors
+let visitors = ["luka", "ana", "luka", "gio", "ana"];
+let uniqueVisitors = new Set(visitors);
+console.log("Unique visitors:", uniqueVisitors.size);
+
+// 9. Numbers divisible by 3 and 5
+let randNums = [15, 30, 22, 45, 9, 10];
+let divBy3and5 = new Set(randNums.filter(n => n % 3 === 0 && n % 5 === 0));
+console.log("Div by 3 and 5:", divBy3and5);
+
+// 10. Are all characters unique
+function allCharsUnique(word) {
+  return new Set(word).size === word.length;
+}
+console.log("Is 'lamp' unique?", allCharsUnique("lamp")); // true
+console.log("Is 'moon' unique?", allCharsUnique("moon")); // false
+    </script>
+</body>
+</html>
