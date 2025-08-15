@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const addSymbol = '+';
+const subSymbol = '-';
+const multiplySymbol = '*';
+
+const plus = addSymbol;
+const minus = subSymbol;
+const times = multiplySymbol;
+
+console.log("--- Task 1 ---");
+console.log(plus);   // +
+console.log(minus);  // -
+console.log(times);  // *
+
+// --- Task 2 ---
+const mainCharacter = "🧙 Wizard";
+const tank = "🗡️ Warrior";
+const support = "💊 Healer";
+
+console.log("\n--- Task 2 ---");
+console.log(`Party: ${mainCharacter} (Main), ${tank} (Tank), ${support} (Support)`);
+
+// --- Task 3 ---
+const lion = "🦁";
+const elephant = "🐘";
+const parrot = "🦜";
+
+function visit() {
+    return "Welcome to the Zoo!";
+}
+
+console.log("\n--- Task 3 ---");
+console.log(visit()); // Welcome to the Zoo!
+console.log(lion);    // 🦁
+console.log(parrot);  // 🦜
+
+// --- Task 4 ---
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function reverse(str) {
+    return str.split('').reverse().join('');
+}
+
+function process(str) {
+    return capitalize(reverse(str));
+}
+
+const stringWizard = process;
+
+console.log("\n--- Task 4 ---");
+console.log(stringWizard("hello")); // Olleh
+
+// --- Task 5 ---
+function logInfo(msg) {
+    console.log(`ℹ️ INFO: ${msg}`);
+}
+
+function logError(msg) {
+    console.log(`❌ ERROR: ${msg}`);
+}
+
+function logAll(msg) {
+    logInfo(msg);
+    logError(msg);
+}
+
+const infoLog = logInfo;
+const allLogs = logAll;
+
+console.log("\n--- Task 5 ---");
+infoLog("Everything's fine.");
+allLogs("Something happened.");
+    </script>
+</body>
+</html>

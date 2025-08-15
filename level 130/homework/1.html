@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Task 1
+function square(num) {
+  return num * num;
+}
+
+function double(num) {
+  return num * 2;
+}
+
+function magicMath(num) {
+  // You didn’t specify exact formula, so I’ll make it:
+  // square(num) + double(num)
+  return square(num) + double(num);
+}
+
+const numberWizard = magicMath;
+console.log(numberWizard(3)); // Task 1 output
+
+
+// Task 2
+function shout(str) {
+  return str.toUpperCase();
+}
+
+function whisper(str) {
+  return str.toLowerCase();
+}
+
+function flipCase(str) {
+  return str
+    .split('')
+    .map(char =>
+      char === char.toUpperCase()
+        ? char.toLowerCase()
+        : char.toUpperCase()
+    )
+    .join('');
+}
+
+const caseFlipper = flipCase;
+console.log(caseFlipper("HeLLo WoRLd")); // Task 2 output
+    </script>
+</body>
+</html>
