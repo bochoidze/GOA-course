@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ------------------------
+// სინქრონული (Synchronous)
+// ------------------------
+// კოდი მუშაობს რიგით: ერთი ოპერაცია სრულდება, შემდეგ იწყება მეორე
+
+console.log("სინქრონული - მოქმედება 1");
+console.log("სინქრონული - მოქმედება 2");
+console.log("სინქრონული - მოქმედება 3");
+
+// ------------------------
+// ასინქრონული (Asynchronous)
+// ------------------------
+// კოდი არ ელოდება ოპერაციის დასრულებას
+// მაგალითად, setTimeout ან API მოთხოვნა
+
+console.log("ასინქრონული - პირველი ნაბიჯი");
+
+setTimeout(() => {
+    console.log("ასინქრონული - 2 წამის შემდეგ გამოდის");
+}, 2000);
+
+console.log("ასინქრონული - მეორე ნაბიჯი");
+
+// მოკლე async მაგალითი
+async function fetchData() {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve("მონაცემები მიღებულია"), 1000);
+    });
+}
+
+async function getData() {
+    let data = await fetchData(); // ელოდება მხოლოდ ამ ფუნქციის ფარგლებში
+    console.log(data);
+}
+
+getData();
+console.log("ასინქრონული - ეს მაშინვე გამოისახება, getData-ის დასრულებამდე");
+    </script>
+</body>
+</html>
