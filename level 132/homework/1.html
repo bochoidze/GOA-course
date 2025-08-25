@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. Basic Promise that resolves immediately
+const promise1 = new Promise((resolve) => {
+  resolve("Hello, Promise!");
+});
+promise1.then(console.log);
+
+// 2. Promise that rejects
+const promise2 = new Promise((_, reject) => {
+  reject("Something went wrong!");
+});
+promise2.catch(console.error);
+
+// 3. Resolve after 2 seconds
+const promise3 = new Promise((resolve) => {
+  setTimeout(() => resolve("2 seconds have passed"), 2000);
+});
+promise3.then(console.log);
+
+// 4. Random success or failure
+const promise4 = new Promise((resolve, reject) => {
+  Math.random() > 0.5 ? resolve("Success!") : reject("Failed!");
+});
+promise4.then(console.log).catch(console.error);
+
+// 5. Chain of promises
+const promise5 = new Promise((resolve) => {
+  resolve(5);
+});
+promise5
+  .then(num => num * 2)
+  .then(num => num * 2)
+  .then(num => num * 2)
+  .then(console.log); // საბოლოოდ 40 გამოვა
+
+// 6. Simulate a network request
+const promise6 = new Promise((resolve) => {
+  setTimeout(() => resolve("Data fetched!"), 1000);
+});
+promise6.then(console.log);
+    </script>
+</body>
+</html>
