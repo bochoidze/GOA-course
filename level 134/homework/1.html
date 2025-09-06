@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. All Success
+Promise.all([
+  Promise.resolve("A"),
+  Promise.resolve("B"),
+  Promise.resolve("C")
+]).then(values => console.log("All Success:", values));
+
+
+// 2. All with One Failure
+Promise.all([
+  Promise.resolve("X"),
+  Promise.resolve("Y"),
+  Promise.reject("Z Failed")
+]).then(values => console.log(values))
+  .catch(err => console.log("Error:", err));
+
+
+// 3. Race Between Delays
+Promise.race([
+  new Promise(res => setTimeout(() => res("First after 1s"), 1000)),
+  new Promise(res => setTimeout(() => res("Second after 2s"), 2000)),
+  new Promise(res => setTimeout(() => res("Third after 3s"), 3000))
+]).then(result => console.log("Race Winner:", result));
+
+
+// 4. Race with Immediate Rejection
+Promise.race([
+  Promise.reject("Immediate Fail"),
+  new Promise(res => setTimeout(() => res("Delayed 1"), 1000)),
+  new Promise(res => setTimeout(() => res("Delayed 2"), 2000))
+]).then(res => console.log(res))
+  .catch(err => console.log("Race Rejected:", err));
+
+
+// 5. Any with Mixed Outcomes
+Promise.any([
+  Promise.reject("Fail 1"),
+  Promise.reject("Fail 2"),
+  Promise.resolve("Success 3")
+]).then(res => console.log("Any Success:", res))
+  .catch(err => console.log(err));
+
+
+// 6. Any All Fail
+Promise.any([
+  Promise.reject("Err1"),
+  Promise.reject("Err2"),
+  Promise.reject("Err3")
+]).then(res => console.log(res))
+  .catch(err => console.log("Any All Fail:", err.message));
+
+
+// 7. AllSettled Summary
+Promise.allSettled([
+  Promise.resolve("One"),
+  Promise.reject("Two Fail"),
+  Promise.resolve("Three"),
+  Promise.reject("Four Fail"),
+  Promise.resolve("Five")
+]).then(results => {
+  results.forEach(r => console.log("AllSettled:", r.status, r.value || r.reason));
+});
+
+
+// 8. Filter Fulfilled from AllSettled
+Promise.allSettled([
+  Promise.resolve(1),
+  Promise.reject("Bad"),
+  Promise.resolve(2)
+]).then(results => {
+  const fulfilled = results.filter(r => r.status === "fulfilled").map(r => r.value);
+  console.log("Fulfilled only:", fulfilled);
+});
+
+
+// 9. Count Failures
+Promise.allSettled([
+  Promise.resolve("OK"),
+  Promise.reject("Fail1"),
+  Promise.reject("Fail2")
+]).then(results => {
+  const count = results.filter(r => r.status === "rejected").length;
+  console.log("Rejected count:", count);
+});
+
+
+// 10. Chain with All + Map
+Promise.all([
+  Promise.resolve(2),
+  Promise.resolve(4),
+  Promise.resolve(6)
+]).then(nums => {
+  const doubled = nums.map(n => n * 2);
+  console.log("Doubled:", doubled);
+});
+    </script>
+</body>
+</html>
