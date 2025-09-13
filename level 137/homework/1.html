@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Task 1: Filter active=false
+const data1 = '[{"name":"A","rank":1,"active":true},{"name":"B","rank":2,"active":false}]';
+const result1 = JSON.parse(data1).filter(obj => obj.active === false);
+console.log("Task 1:", result1);
+
+// Task 2: Extract Names
+const data2 = '[{"name":"Luka","email":"luka@mail.com","verified":true},{"name":"Ana","email":"ana@mail.com","verified":false}]';
+const result2 = JSON.parse(data2).map(obj => obj.name);
+console.log("Task 2:", result2);
+
+// Task 3: Count by Condition
+const data3 = '[{"score":90,"passed":true},{"score":70,"passed":true},{"score":85,"passed":false},{"score":95,"passed":true}]';
+const result3 = JSON.parse(data3).filter(o => o.score > 80 && o.passed).length;
+console.log("Task 3:", result3);
+
+// Task 4: Transform to Map
+const data4 = '[{"id":"x1","value":10},{"id":"x2","value":20}]';
+const result4 = JSON.parse(data4).reduce((acc,o)=>{acc[o.id]=o.value;return acc;}, {});
+console.log("Task 4:", result4);
+
+// Task 5: Validate Structure
+const data5 = '[{"name":"Gio","age":22,"email":"g@mail.com"},{"name":"Mari","age":19,"email":"m@mail.com"}]';
+const result5 = JSON.parse(data5).every(o => "name" in o && "age" in o && "email" in o);
+console.log("Task 5:", result5);
+
+// Task 6: Sort by Property
+const data6 = '[{"title":"Task A","priority":3},{"title":"Task B","priority":1},{"title":"Task C","priority":2}]';
+const result6 = JSON.parse(data6).sort((a,b)=>a.priority-b.priority);
+console.log("Task 6:", result6);
+
+// Task 7: Group by Category
+const data7 = '[{"item":"Apple","category":"Fruit"},{"item":"Carrot","category":"Veg"},{"item":"Banana","category":"Fruit"}]';
+const result7 = JSON.parse(data7).reduce((acc,o)=>{
+  if(!acc[o.category]) acc[o.category] = [];
+  acc[o.category].push(o.item);
+  return acc;
+}, {});
+console.log("Task 7:", result7);
+
+// Task 8: Convert to JSON
+const arr8 = [{name:"Gio",status:"ok"},{name:"Nika",status:"fail"}];
+const result8 = JSON.stringify(arr8);
+console.log("Task 8:", result8);
+
+// Task 9: Merge JSON Arrays (remove duplicates by id)
+const data9a = '[{"id":1,"name":"A"},{"id":2,"name":"B"}]';
+const data9b = '[{"id":2,"name":"B"},{"id":3,"name":"C"}]';
+const arr9 = [...JSON.parse(data9a), ...JSON.parse(data9b)];
+const result9 = Object.values(arr9.reduce((acc,o)=>{acc[o.id]=o;return acc;}, {}));
+console.log("Task 9:", result9);
+
+// Task 10: Replace Values
+const data10 = '[{"status":"pending"},{"status":"complete"},{"status":"pending"}]';
+const result10 = JSON.parse(data10).map(o => ({...o, status:o.status==="pending"?"complete":o.status}));
+console.log("Task 10:", result10);
+    </script>
+</body>
+</html>

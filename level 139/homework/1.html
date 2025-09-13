@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animal World</title>
+    <!-- React და ReactDOM CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- ჩვენი React კოდი -->
+    <script type="text/babel">
+      function App() {
+        return 
+          <div style={{ fontFamily: "Arial", padding: "20px" }}>
+            <h1>Animal World</h1>
+
+            <h2>1 ვეფხვები</h2>
+            <p>ვეფხვები ძლიერები და ლამაზები არიან.</p>
+
+            <h2>2 ლომები</h2>
+            <p>ლომები — ჯუნგლების მეფეები.</p>
+
+            <h2>3 წიწილები</h2>
+            <p>წიწილები პატარა და საყვარლები არიან.</p>
+
+            <h2>4 Hey Hey</h2>
+            <p>ეს არის Hey Hey საიტი 🎉</p>
+
+            <h2>5 ზღვის ლომები</h2>
+            <p>ზღვის ლომები წყალში თამაშობენ.</p>
+
+            <h2>6 იხვნისკარტები</h2>
+            <p>იხვნისკარტი უნიკალური ცხოველია ავსტრალიიდან.</p>
+          </div>
+        ;
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
