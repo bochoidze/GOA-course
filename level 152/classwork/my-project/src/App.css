@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Header */
+.header {
+color: aqua;
+align-items: center;
+}
+/* Main */
+.main {
+color: blue;
+}
+
+/* Footer */
+.footer {
+color: gray;
+}
