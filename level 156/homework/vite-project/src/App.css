@@ -1,42 +1,86 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  background: hsl(0, 0%, 95%);
+  font-family: "Lexend Deca", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.wrapper {
+  display: flex;
+  max-width: 900px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .card {
-  padding: 2em;
+  padding: 40px;
+  color: white;
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.read-the-docs {
-  color: #888;
+.card p {
+  color: hsl(0, 0%, 90%);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.icon {
+  width: 50px;
+}
+
+h2 {
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+.sedans {
+  background: hsl(31, 77%, 52%);
+}
+
+.suvs {
+  background: hsl(184, 100%, 22%);
+}
+
+.luxury {
+  background: hsl(179, 100%, 13%);
+}
+
+.btn {
+  background: white;
+  border: 2px solid white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: 700;
+  width: fit-content;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-sedans {
+  color: hsl(31, 77%, 52%);
+}
+
+.btn-suvs {
+  color: hsl(184, 100%, 22%);
+}
+
+.btn-luxury {
+  color: hsl(179, 100%, 13%);
+}
+
+.btn:hover {
+  background: transparent;
+  color: white;
 }

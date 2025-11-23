@@ -1,38 +1,38 @@
-// App.jsx
-
 import React from "react";
-import "./App.css"; // აქ უკავშირდება სტილებს
+import "./App.css";
 
-function App() {
-  const age = 16;
-  const isLoggedIn = true;
-  const showWarning = false;
-
-  // IF STATEMENT:
-  // ამოწმებს პირობას → true/false
-  let ageMessage = "";
-  if (age >= 18) {
-    ageMessage = "შენ სრულწლოვანი ხარ";
-  } else {
-    ageMessage = "შენ არასრულწლოვანი ხარ";
-  }
-
+export default function App() {
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>React Logic Examples</h1>
+    <div className="wrapper">
+      <div className="card sedans">
+        <img className="icon" src="" alt="sedans icon" />
+        <h2>SEDANS</h2>
+        <p>
+          Choose a sedan for its affordability and excellent fuel economy. Ideal
+          for cruising in the city or on your next road trip.
+        </p>
+        <button className="btn btn-sedans">Learn More</button>
+      </div>
 
-      {/* IF STATEMENT RESULT */}
-      <h2>{ageMessage}</h2>
+      <div className="card suvs">
+        <img className="icon" src="" alt="suvs icon" />
+        <h2>SUVS</h2>
+        <p>
+          Take an SUV for its spacious interior, power, and versatility. Perfect
+          for your next family vacation and off-road adventures.
+        </p>
+        <button className="btn btn-suvs">Learn More</button>
+      </div>
 
-      {/* TERNARY OPERATOR:
-          მოკლე if/else — პირობა ? მართალია : ტყუილია */}
-      <h3>{isLoggedIn ? "ავტორიზებული ხარ" : "შენ არ ხარ ავტორიზებული"}</h3>
-
-      {/* && OPERATOR:
-          რაღაც გამოჩნდება მხოლოდ მაშინ, როცა პირობა trueა */}
-      {showWarning && <p style={{ color: "red" }}>გაფრთხილება ჩართულია</p>}
+      <div className="card luxury">
+        <img className="icon" src="" alt="luxury icon" />
+        <h2>LUXURY</h2>
+        <p>
+          Cruise in the best car brands without the bloated prices. Enjoy the
+          allure of a luxury rental and arrive in style.
+        </p>
+        <button className="btn btn-luxury">Learn More</button>
+      </div>
     </div>
   );
 }
-
-export default App;
