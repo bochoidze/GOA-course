@@ -1,0 +1,104 @@
+/* Background centered */
+.background {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsl(225, 100%, 94%);
+  font-family: Arial, sans-serif;
+}
+
+/* Card */
+.card {
+  background: white;
+  width: 330px;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Top image */
+.hero {
+  width: 100%;
+}
+
+/* Text */
+h1 {
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+.desc {
+  font-size: 14px;
+  color: gray;
+  padding: 0 30px;
+  margin-bottom: 20px;
+}
+
+/* Plan box */
+.plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: hsl(225, 100%, 98%);
+  padding: 15px;
+  margin: 0 25px 20px;
+  border-radius: 12px;
+}
+
+.plan-left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.plan-title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.plan-price {
+  font-size: 13px;
+  color: gray;
+}
+
+.change {
+  font-size: 13px;
+  color: hsl(245, 75%, 52%);
+  cursor: pointer;
+}
+
+.change:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.primary {
+  width: calc(100% - 50px);
+  margin: 0 25px 12px;
+  padding: 12px 0;
+  border: none;
+  background: hsl(245, 75%, 52%);
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.primary:hover {
+  background: hsl(245, 75%, 45%);
+}
+
+.secondary {
+  background: transparent;
+  border: none;
+  margin-bottom: 20px;
+  color: gray;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.secondary:hover {
+  color: black;
+}
