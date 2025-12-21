@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+}
+
+.app {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.app h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.playlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.song-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.song-card:hover {
+  transform: translateY(-5px);
+}
+
+.album-art {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.song-body h2 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.song-body p {
+  font-size: 14px;
+  color: #666;
+}
