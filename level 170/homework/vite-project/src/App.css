@@ -1,0 +1,21 @@
+/* Desktop (default)
+დიდ ეკრანზე ელემენტები გვერდიგვერდაა */
+.content {
+  display: flex;
+}
+
+/* Mobile
+600px-ზე პატარა ეკრანზე ყველაფერი სვეტში გადადის */
+@media (max-width: 600px) {
+  .content {
+    flex-direction: column;
+  }
+}
+
+/* Tablet
+601px–900px შუალედში ელემენტები 2 სვეტადაა */
+@media (min-width: 601px) and (max-width: 900px) {
+  .content {
+    flex-wrap: wrap;
+  }
+}

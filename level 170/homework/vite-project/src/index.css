@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+/* App layout */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background: #111;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .content {
+    flex-direction: column;
+    padding: 15px;
+  }
+}
+
+/* 📱 Tablet */
+@media (min-width: 601px) and (max-width: 900px) {
+  .content {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 1 1 45%;
+  }
+}
