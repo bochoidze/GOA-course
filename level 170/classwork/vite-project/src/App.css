@@ -1,0 +1,76 @@
+/* Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* მთავარი Wrapper */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 40px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* სურათი */
+.hero-image img {
+  width: 350px;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* ტექსტის ნაწილი */
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* ღილაკი */
+.hero-content button {
+  padding: 12px 25px;
+  border: none;
+  background: #667eea;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-content button:hover {
+  background: #4b5bdc;
+}
+
+/* 🔥 რესპონსივი */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* სვეტებად ჩამოვა */
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 100%;
+  }
+}
